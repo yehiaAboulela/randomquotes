@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-wrapper {
+  background-color: rgb(190, 103, 21);
+  margin-top: 1rem;
+  width: 100%;
+  padding-block: 15px;
+}
+.logo {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 900;
+  color: black;
+  padding-left: 20px;
+}
+.modes-wrapper {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.modes-wrapper p {
+  padding-right: 10px;
+  font-size: 1.5rem;
+}
+.modes {
+  background-color: rgb(190, 103, 21);
+  width: fit-content;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+.modes i {
+  display: inline-block;
+  color: black;
+  font-size: 2rem;
+  padding-inline: 20px;
+
+  cursor: pointer;
+  transition: color 0.5s;
+}
+[mode="angry"] {
+  animation: angry-animation infinite 1s linear;
+}
+[mode="dizzy"] {
+  animation: dizzy-animation infinite 5s linear;
+}
+[mode="sad"] {
+  animation: sad-animation infinite 3s linear;
+}
+.modes i:hover {
+  color: rgb(255, 255, 255);
+}
+
+@keyframes angry-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes dizzy-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sad-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.icon-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-inline: 1px;
+}
+
+.icon-wrapper label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.icon-wrapper:hover label {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+
+.quote-wrapper {
+  width: 70%;
+  margin: 50px auto 0;
+  font-family: "Great Vibes", cursive;
+}
+
+.quote-wrapper p {
+  font-size: 3rem;
+  /* font-weight: 700; */
+  text-align: center;
+}
+.quote-wrapper .auther {
+  display: inline-block;
+  margin: 50px 0 0 50px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    font-size: 11px;
+  }
+}
